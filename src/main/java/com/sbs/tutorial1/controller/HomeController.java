@@ -6,6 +6,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
+
+    int num;
+
+    public HomeController() {
+        num = -1;
+    }
+
     @GetMapping("home/main")
     @ResponseBody
     public String showHome() {
@@ -23,5 +30,13 @@ public class HomeController {
     public String showHome3() {
         return "스프링부트 획기적이다.";
     }
+
+    @GetMapping("home/increase")
+    @ResponseBody
+    public int showIncrease() {
+        num++;
+        return num;
+    }
+
 
 }
